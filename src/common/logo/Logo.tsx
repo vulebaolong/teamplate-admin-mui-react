@@ -55,7 +55,7 @@ export default function Logo({ disabledLink = false, sx = {}, animation = false 
    }
 
    const handleClickLogo = () => {
-      navigate(ROUTES.HOME);
+      navigate(ROUTES.ADMIN.HOME());
    };
 
    return (

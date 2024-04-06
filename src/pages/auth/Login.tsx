@@ -63,7 +63,7 @@ export default function Login() {
 
                //   dispatch(getInfomationMID());
 
-               navigate(ROUTES.DASHBOARD);
+               navigate(ROUTES.ADMIN.HOME());
             },
             (error) => {
                console.log(error);

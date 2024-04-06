@@ -43,9 +43,9 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
       }, [location]);
 
       const rederContent = () => {
-         if (location.pathname.slice(1) === ROUTES.LOGIN) {
+         if (location.pathname.slice(1) === ROUTES.AUTH.LOGIN()) {
             if (getAccessToken()) {
-               return <Navigate to={`/${ROUTES.HOME}`} replace />;
+               return <Navigate to={`/${ROUTES.ADMIN.HOME()}`} replace />;
             }
          }
 

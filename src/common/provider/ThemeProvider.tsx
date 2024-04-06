@@ -21,6 +21,9 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
                   },
                },
                MuiButton: {
+                  defaultProps: {
+                     disableElevation: true,
+                  },
                   styleOverrides: {
                      root: {
                         borderRadius: "10px",
@@ -58,6 +61,42 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
                      root: {
                         // paddingLeft: `30px`,
                         // paddingRight: `30px`,
+                        "transition": `none`,
+                        "borderRadius": `6px`,
+                        "&.Mui-selected": {
+                           "backgroundColor": `${mode === `dark` ? `rgb(31, 38, 46)` : `#EBF5FF`}`,
+                           "color": `${mode === `dark` ? `rgb(102, 178, 255)` : `#006BD6`}`,
+                           "&:hover": {
+                              backgroundColor: `${
+                                 mode === `dark` ? `rgb(47, 58, 70)` : `rgba(204, 229, 255, 0.8)`
+                              }`,
+                              color: `${mode === `dark` ? `rgb(153, 204, 255)` : `#0061C2`}`,
+                           },
+                        },
+                     },
+                  },
+               },
+               MuiIconButton: {
+                  defaultProps: {
+                     disableTouchRipple: true,
+                  },
+                  styleOverrides: {
+                     root: {
+                        color: `rgb(102, 178, 255)`,
+                        borderRadius: `12px`,
+                        border: `1px solid ${mode === `dark` ? `rgb(31, 38, 46)` : `#DAE2ED`}`,
+                        boxShadow: `${
+                           mode === `dark`
+                              ? `rgb(16, 20, 24) 0px 1px 1px inset, rgb(11, 13, 14) 0px 1px 0.5px`
+                              : `inset 0 1px 2px #F3F6F9,0 1px 0.5px rgba(229, 234, 242, 0.6)`
+                        }`,
+                     },
+                  },
+               },
+               MuiSvgIcon: {
+                  styleOverrides: {
+                     root: {
+                        fontSize: `18px`,
                      },
                   },
                },

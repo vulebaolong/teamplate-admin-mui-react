@@ -3,9 +3,9 @@ import Page from "../common/Page";
 import { ROUTES } from "../constants/routes.contants";
 import Dashboard from "../pages/dashboard/Dashboard";
 
-export const UserRoutes = [
+export const AdminRoutes = [
    {
-      path: ROUTES.DASHBOARD,
+      path: ROUTES.ADMIN.HOME(true),
       element: (
          <Page title="Dashboard">
             <Dashboard />

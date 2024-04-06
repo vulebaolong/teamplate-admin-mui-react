@@ -5,7 +5,7 @@ import Login from "../pages/auth/Login";
 
 export const AuthRoutes = [
    {
-      path: ROUTES.LOGIN,
+      path: ROUTES.AUTH.LOGIN(true),
       element: (
          <Page title="Login">
             <Login />

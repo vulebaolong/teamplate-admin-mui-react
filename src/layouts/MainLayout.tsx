@@ -1,13 +1,12 @@
-import { Button, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Header from "../common/header/Header";
-import { useAppDispatch, useAppSelector } from "../store/store";
-import { SET_MODE } from "../store/slices/setting/setting.slice";
 import Nav from "../common/nav/Nav";
+import { useIsMobile } from "../hooks/useResponsive";
 
 export default function MainLayout() {
-   const { mode } = useAppSelector((state) => state.setting);
-   const dispatch = useAppDispatch();
+   const isMobile = useIsMobile();
+
    return (
       <Stack
          sx={{
@@ -17,7 +16,7 @@ export default function MainLayout() {
             flexDirection: `row`,
          }}
       >
-         <Nav />
+         {!isMobile && <Nav />}
          <Stack
             sx={{
                width: `100%`,
@@ -25,23 +24,18 @@ export default function MainLayout() {
             }}
          >
             <Header />
-            <Outlet />
+            <Box
+               sx={{
+                  flex: `1`,
+                  padding: `20px`,
+                  overflowY: `auto`,
+               }}
+            >
+               <Outlet />
+            </Box>
          </Stack>
 
-         <Button
-            sx={{
-               position: `fixed`,
-               bottom: `0`,
-               right: `0`,
-            }}
-            onClick={() => {
-               dispatch(SET_MODE(mode === `light` ? `dark` : `light`));
-            }}
-            variant="contained"
-            size="large"
-         >
-            Toggle mode
-         </Button>
+        
       </Stack>
    );
 }
