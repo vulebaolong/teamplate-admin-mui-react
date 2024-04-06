@@ -1,0 +1,23 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+:root {
+   --color-1: #753d08;
+   --color-2: #ffce99;
+   --color-3: #0f530d;
+   --color-4: #0ca612;
+   --color-5: #e6c19e;
+   --color-6: #53330d;
+   --brightness-video-pause: 0.7;
+   --brightness-video-play: 1;
+   --header-height: 70px;
+   --nav-width: 300px
+}
+
+img {
+   max-width: 100%;
+   vertical-align: middle;
+}
